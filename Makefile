@@ -6,7 +6,7 @@ INCLUDE	= -I/usr/local/include -I.
 CFLAGS	= -O3 -Wall $(INCLUDE) -Winline -pipe $(CFLAGSDEV)
 
 LDFLAGS	= -L/usr/local/lib
-LIBS    = -l bcm2835 -l rt
+LIBS    = -l rt
 
 SRC	    = main.c wiring.c nrf24le1.c
 OBJ	    = $(addprefix $(OBJ_PATH)/, $(patsubst %.c,%.o,$(SRC)))
