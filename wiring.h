@@ -2,10 +2,12 @@
 #define __WIRING_H__
 
 #include <errno.h>
+#include <stdbool.h>
 #include <stdint.h>
 #include <stdlib.h>
 #include <stdio.h>
 #include <unistd.h>
+#include <linux/types.h>
 
 /* nrf24LE1 required signals */
 #define WIRING_NRF_PROG_PIN		24
@@ -16,7 +18,7 @@
 #define mdelay(ms)		usleep(ms*1000)
 
 /* Wiring functions for bootstraping SPI */
-void wiring_init(void);
+bool wiring_init(const char *device);
 void wiring_destroy(void);
 
 /* Full-duplex read and write function */
