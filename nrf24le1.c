@@ -293,7 +293,7 @@ da_test_show(int dump)
 		printf("* FSR apos WRDIS, WEN deve ser 0\n");
 		dump_fsr(fsr);
 	}
-	if ((fsr & FSR_WEN) == 1) {
+	if ((fsr & FSR_WEN)) {
 		printf("Failed to set Write Enable bit to 0\n");
 		ret = -EFAULT;
 	}
