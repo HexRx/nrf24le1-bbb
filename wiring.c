@@ -47,53 +47,29 @@ exit:
 	return 0;
 }
 
-// ugly.
-
 uint8_t
 wiring_write_then_read(uint8_t* out, uint16_t out_len, 
 	               uint8_t* in, uint16_t in_len)
 {
-	uint8_t tx_buf[out_len + in_len];
-	uint8_t rx_buf[out_len + in_len];
-
-	unsigned int ret = 0;
-
-	memset(tx_buf, 0, out_len + in_len);
-	memset(rx_buf, 0, out_len + in_len);
-
-	if (NULL != out) {
-		memcpy(tx_buf, out, out_len);
-		ret += out_len;
-	}
-
-	if (NULL != in) {
-		ret += in_len;
-	}
-
 	struct spi_ioc_transfer xfer[2];
+
 	memset(xfer, 0, sizeof(xfer));
 
-	xfer[0].tx_buf = (unsigned long)&tx_buf[0];
-	xfer[0].rx_buf = (unsigned long)&rx_buf[0];
-	xfer[0].len = ret;
-	xfer[0].speed_hz = 2500000;
+	xfer[0].tx_buf = (unsigned long)out;
+	xfer[0].len = out_len;
 	xfer[0].bits_per_word = 8;
 
 	xfer[1].rx_buf = (unsigned long)in;
 	xfer[1].len = in_len;
-	xfer[1].speed_hz = 2500000;
 	xfer[1].bits_per_word = 8;
 
-	//int status = ioctl(fd, SPI_IOC_MESSAGE(in_len > 0 ? 2 : 1), &xfer[0]);
-	int status = ioctl(fd, SPI_IOC_MESSAGE(1), &xfer[0]);
+	int status = ioctl(fd, SPI_IOC_MESSAGE(in_len > 0 ? 2 : 1), &xfer[0]);
 	if (status < 0) {
 		perror("SPI_IOC_MESSAGE");
 		return 0;
 	}
 
-	memcpy(in, &rx_buf[out_len], in_len);
-
-	return ret;
+	return in_len + out_len;
 }
 
 void
