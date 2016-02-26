@@ -11,6 +11,14 @@ a BeagleBone and the spidev driver.
 - P9_23 PROG
 - P9_24 RESET
 
+# Known issues
+
+The spidev buffer size might be too small, fix with
+
+`chmod u+w /sys/module/spidev/parameters/bufsiz`
+`echo 65536 > /sys/module/spidev/parameters/bufsiz`
+
+
 ## Features
 - Program memory read/write
 - NVM memory read/write
