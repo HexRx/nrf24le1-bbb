@@ -4,17 +4,12 @@ a BeagleBone and the spidev driver.
 
 # Pinout
 
-P9_17 SPI CS
-P9_18 SPI MOSI
-P9_21 SPI MISO
-P9_22 SPI CLK
-P9_23 PROG
-P9_24 RESET
-
-
-+#define WIRING_NRF_PROG_PIN    (1*32 + 17) // GPIO1_17 P9_23
-+#define WIRING_NRF_RESET_PIN   (0*32 + 15) // GPIO0_15 P9_24
-
+- P9_17 SPI CS
+- P9_18 SPI MOSI
+- P9_21 SPI MISO
+- P9_22 SPI CLK
+- P9_23 PROG
+- P9_24 RESET
 
 ## Features
 - Program memory read/write
