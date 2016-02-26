@@ -39,11 +39,11 @@ void nrf24le1_cleanup(void)
 
 static void dump_fsr(uint8_t fsr)
 {
-	printf(" -> FSR.RDISMB: %i\n",  (fsr & FSR_RDISMB ? 1 : 0));
-	printf(" -> FSR.INFEN: %i\n",   (fsr & FSR_INFEN ? 1 : 0));
-	printf(" -> FSR.RDYN: %i\n",    (fsr & FSR_RDYN ? 1 : 0));
-	printf(" -> FSR.WEN: %i\n",     (fsr & FSR_WEN ? 1 : 0));
-	printf(" -> FSR.STP: %i\n",     (fsr & FSR_STP ? 1 : 0));
+	printf(" -> FSR.RDISMB : %i\n",  (fsr & FSR_RDISMB ? 1 : 0));
+	printf(" -> FSR.INFEN  : %i\n",   (fsr & FSR_INFEN ? 1 : 0));
+	printf(" -> FSR.RDYN   : %i\n",    (fsr & FSR_RDYN ? 1 : 0));
+	printf(" -> FSR.WEN    : %i\n",     (fsr & FSR_WEN ? 1 : 0));
+	printf(" -> FSR.STP    : %i\n",     (fsr & FSR_STP ? 1 : 0));
 	printf(" -> FSR.ENDEBUG: %i\n", (fsr & FSR_ENDEBUG ? 1 : 0));
 }
 

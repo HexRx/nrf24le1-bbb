@@ -47,8 +47,8 @@
 #define N_BYTES_FOR_READ  (16)
 #define NRF_SPI_SPEED_HZ  (4500 * 1000) /* 4.5Mhz */
 
-#define GPIO_PROG		WIRING_NRF_PROG_PIN // wiringPi or GPIO 24 in BCM
-#define GPIO_RESET		WIRING_NRF_RESET_PIN // wiringPi or GPIO 25 in BCM 
+#define GPIO_PROG		WIRING_NRF_PROG_PIN
+#define GPIO_RESET		WIRING_NRF_RESET_PIN
 
 #define debug(fmt, args...) \
 { \

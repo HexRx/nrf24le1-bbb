@@ -10,8 +10,8 @@
 #include <linux/types.h>
 
 /* nrf24LE1 required signals */
-#define WIRING_NRF_PROG_PIN		24
-#define WIRING_NRF_RESET_PIN	25
+#define WIRING_NRF_PROG_PIN	(1*32 + 17) // GPIO1_17 P9_23
+#define WIRING_NRF_RESET_PIN	(0*32 + 15) // GPIO0_15 P9_24
 
 /* Macros for sleep happiness */
 #define udelay(us)		usleep(us)

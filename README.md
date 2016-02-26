@@ -1,20 +1,25 @@
-# nrf24le1-libbcm2835
+# nrf24le1-bbb
 A simple command-line interface with Nordic nRF24LE1 using 
-RaspberryPi over bcm2835 library.
+a BeagleBone and the spidev driver.
 
-This tool started as a userpace port of **@hltrd** nrf24le1
-linux device driver.
+# Pinout
+
+P9_17 SPI CS
+P9_18 SPI MOSI
+P9_21 SPI MISO
+P9_22 SPI CLK
+P9_23 PROG
+P9_24 RESET
+
+
++#define WIRING_NRF_PROG_PIN    (1*32 + 17) // GPIO1_17 P9_23
++#define WIRING_NRF_RESET_PIN   (0*32 + 15) // GPIO0_15 P9_24
+
 
 ## Features
 - Program memory read/write
 - NVM memory read/write
 - InfoPage handling
-
-## Requirements
-- You must be using a Linux distro with `bcm2835` and `rt` 
-libraries installed.
-- If your partition is mounted with `nosuid` probably you 
-will need to run this tool as root.
 
 ## Command Line Format
 
