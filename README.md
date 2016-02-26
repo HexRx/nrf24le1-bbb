@@ -16,6 +16,7 @@ a BeagleBone and the spidev driver.
 The spidev buffer size might be too small, fix with
 
 `chmod u+w /sys/module/spidev/parameters/bufsiz`
+
 `echo 65536 > /sys/module/spidev/parameters/bufsiz`
 
 
