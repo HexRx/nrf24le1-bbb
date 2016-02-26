@@ -73,5 +73,3 @@ be used.
 # References
 
 * Nordic nRF24LE1: <http://www.nordicsemi.com/eng/Products/2.4GHz-RF/nRF24LE1>
-* bcm2835 Library: <http://www.airspayce.com/mikem/bcm2835/>
-* **hltrd** linux device driver: <https://bitbucket.org/erm/nrf24le1>
