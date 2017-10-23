@@ -8,7 +8,7 @@ CFLAGS	= -std=c99 -O3 -D_BSD_SOURCE -Wall $(INCLUDE) -Winline -pipe $(CFLAGSDEV)
 LDFLAGS	= -L/usr/local/lib
 LIBS    = -l rt
 
-SRC	    = main.c wiring.c nrf24le1.c gpio.c
+SRC	    = main.c wiring.c nrf24le1.c gpio_lib.c
 OBJ	    = $(addprefix $(OBJ_PATH)/, $(patsubst %.c,%.o,$(SRC)))
 BINS	= main
 
@@ -25,9 +25,9 @@ $(OBJ_PATH)/%.o: %.c
 	@mkdir -p $(OBJ_PATH)
 	$(CC) -c -o $@ $< $(CFLAGS)
 
-$(OBJ_PATH)/wiring.o: wiring.c wiring.h gpio.h
+$(OBJ_PATH)/wiring.o: wiring.c wiring.h gpio_lib.h
 $(OBJ_PATH)/nrf24le1.o: wiring.h nrf24le1.h
-$(OBJ_PATH)/gpio.o: gpio.h
+$(OBJ_PATH)/gpio_lib.o: gpio_lib.h
 $(OBJ_PATH)/main.o: nrf24le1.h
 
 install:

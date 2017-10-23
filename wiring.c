@@ -7,8 +7,6 @@
 
 #include <linux/spi/spidev.h>
 
-#include "gpio.h"
-
 static int fd = -1;
 
 bool
@@ -33,12 +31,12 @@ wiring_init(const char *device)
 		goto exit;
 	}
 
-	if (gpio_init() != 0) {
+	if (SETUP_OK != sunxi_gpio_init()) {
 		goto exit;
 	}
 
-	gpio_oe(WIRING_NRF_PROG_PIN / 32, WIRING_NRF_PROG_PIN % 32);
-	gpio_oe(WIRING_NRF_RESET_PIN / 32, WIRING_NRF_RESET_PIN % 32);
+	sunxi_gpio_set_cfgpin(SUNXI_GPA(13), OUTPUT);
+	sunxi_gpio_set_cfgpin(SUNXI_GPA(14), OUTPUT);
 
 	return 1;
 
@@ -75,12 +73,12 @@ wiring_write_then_read(uint8_t* out, uint16_t out_len,
 void
 wiring_set_gpio_value(uint8_t pin, uint8_t state)
 {
-	gpio_set(pin / 32, pin % 32, state);
+	sunxi_gpio_output(pin, state);
 }
 
 void
 wiring_destroy(void)
 {
 	close(fd);
-	gpio_exit();
+	sunxi_gpio_cleanup();
 }

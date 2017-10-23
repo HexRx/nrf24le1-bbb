@@ -9,9 +9,11 @@
 #include <unistd.h>
 #include <linux/types.h>
 
+#include "gpio_lib.h"
+
 /* nrf24LE1 required signals */
-#define WIRING_NRF_PROG_PIN	(1*32 + 17) // GPIO1_17 P9_23
-#define WIRING_NRF_RESET_PIN	(0*32 + 15) // GPIO0_15 P9_24
+#define WIRING_NRF_PROG_PIN		SUNXI_GPA(13)
+#define WIRING_NRF_RESET_PIN	SUNXI_GPA(14)
 
 /* Macros for sleep happiness */
 #define udelay(us)		usleep(us)
