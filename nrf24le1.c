@@ -29,7 +29,7 @@ int _enable_program = 0;
 void nrf24le1_init()
 {
 	debug("Initializing nRF24LE1\n");
-	wiring_init("/dev/spidev1.0");
+	wiring_init("/dev/spidev0.0");
 }
 
 void nrf24le1_cleanup(void)
