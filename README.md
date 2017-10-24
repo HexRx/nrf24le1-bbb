@@ -1,4 +1,4 @@
-# nrf24le1-bbb
+# nrf24le1-orangepi
 A simple command-line interface with Nordic nRF24LE1 using 
 a Orange Pi and the spidev driver.
 
@@ -6,14 +6,14 @@ a Orange Pi and the spidev driver.
 
 ![Orange Pi pinout](http://orange314.com/images/thumb/c/cf/Opi_gpio.png/500px-Opi_gpio.png)
 
-Orange Pi | nRF24LE1
---- | ---
-SPI0_CS | FCSN
-SPI0_MOSI | FMOSI
-SPI0_MISO | FMISO
-SPI0_CLK | FSCK
-PA13 | FPROG
-PA14 | FRESET
+Signal | Orange Pi | nRF24LE1 (QFN32)
+--- | --- | ---
+CS | SPI0_CS | P1.1
+MOSI | SPI0_MOSI | P0.7
+MISO | SPI0_MISO | P1.0
+CLK | SPI0_CLK | P0.5
+PROG | PA13 | PROG
+RESET | PA14 | RESET
 
 # Known issues
 
