@@ -1,15 +1,19 @@
 # nrf24le1-bbb
 A simple command-line interface with Nordic nRF24LE1 using 
-a BeagleBone and the spidev driver.
+a Orange Pi and the spidev driver.
 
 # Pinout
 
-- P9_17 SPI CS
-- P9_18 SPI MOSI
-- P9_21 SPI MISO
-- P9_22 SPI CLK
-- P9_23 PROG
-- P9_24 RESET
+![Orange Pi pinout](http://orange314.com/images/thumb/c/cf/Opi_gpio.png/500px-Opi_gpio.png)
+
+Orange Pi | nRF24LE1
+--- | ---
+SPI0_CS | FCSN
+SPI0_MOSI | FMOSI
+SPI0_MISO | FMISO
+SPI0_CLK | FSCK
+PA13 | FPROG
+PA14 | FRESET
 
 # Known issues
 
