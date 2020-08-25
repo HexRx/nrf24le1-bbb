@@ -4,7 +4,7 @@ a Orange Pi and the spidev driver.
 
 # Pinout
 
-![Orange Pi pinout](http://orange314.com/images/thumb/c/cf/Opi_gpio.png/500px-Opi_gpio.png)
+![Orange Pi pinout](docs/500px-Opi_gpio.png)
 
 Signal | Orange Pi | nRF24LE1 (QFN32)
 --- | --- | ---
